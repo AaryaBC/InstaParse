@@ -13,16 +13,18 @@ import Parse
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var myClientKey: String = "2773625"
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         Parse.initialize(
             with: ParseClientConfiguration(block: { (configuration:ParseMutableClientConfiguration) -> Void in
-                configuration.applicationId = "myAppId"
-                configuration.clientKey = nil  // set to nil assuming you have not set clientKey
+                configuration.applicationId = "myInstaParse"
+                configuration.clientKey = self.myClientKey  // set to nil assuming you have not set clientKey
                 configuration.server = "https://instacodepathparse.herokuapp.com/parse"
-            }))
+            })
+        )
         return true
     }
 

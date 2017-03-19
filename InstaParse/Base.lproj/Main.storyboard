@@ -57,14 +57,14 @@
                     <connections>
                         <outlet property="passwordField" destination="ZYm-1J-CzH" id="YyF-eG-Cdp"/>
                         <outlet property="usernameField" destination="kgs-P2-oHN" id="Y73-KA-bMa"/>
-                        <segue destination="DdD-Ta-dcE" kind="show" identifier="loginSegue" id="wUQ-jE-g3N"/>
+                        <segue destination="oIh-Rs-px5" kind="show" identifier="loginSegue" id="n7N-9f-WVd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Home-->
         <scene sceneID="rhY-0D-KUB">
             <objects>
                 <viewController id="8he-Mq-IIF" customClass="HomeViewController" customModule="InstaParse" customModuleProvider="target" sceneMemberID="viewController">
@@ -126,6 +126,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Home" id="ydQ-DU-AUj"/>
                     <navigationItem key="navigationItem" id="Vmy-TP-wDQ"/>
                     <connections>
                         <outlet property="collectionView" destination="qhP-mI-i86" id="Bau-mf-G2i"/>
@@ -135,23 +136,77 @@
             </objects>
             <point key="canvasLocation" x="1868" y="37.331334332833585"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Vdw-Ux-Ksm">
+        <!--Upload-->
+        <scene sceneID="yQ6-tb-ckZ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DdD-Ta-dcE" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2fT-Aa-yJI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
+                <viewController id="ptK-ac-n8w" customClass="UploadViewController" customModule="InstaParse" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="X0v-eA-QqE"/>
+                        <viewControllerLayoutGuide type="bottom" id="Wms-0K-r3v"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="q0x-Ev-5rt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1YM-ou-nEy">
+                                <rect key="frame" x="16" y="28" width="343" height="232"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YLE-77-rgz">
+                                <rect key="frame" x="16" y="268" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MeC-Qg-qhI">
+                                <rect key="frame" x="141" y="318" width="93" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Pick Image"/>
+                                <connections>
+                                    <action selector="pickImageButtonClicked:" destination="ptK-ac-n8w" eventType="touchUpInside" id="wFm-1g-nHC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Joy-6D-fql">
+                                <rect key="frame" x="159" y="356" width="56" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Upload"/>
+                                <connections>
+                                    <action selector="uploadButtonClicked:" destination="ptK-ac-n8w" eventType="touchUpInside" id="5mn-1g-rG3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Upload" id="SgT-uO-O3K"/>
                     <connections>
-                        <segue destination="8he-Mq-IIF" kind="relationship" relationship="rootViewController" id="Hhh-e5-uzu"/>
+                        <outlet property="captionTextField" destination="YLE-77-rgz" id="iUA-Zz-yhZ"/>
+                        <outlet property="pickImageButton" destination="MeC-Qg-qhI" id="EJY-zX-w0z"/>
+                        <outlet property="postPhotoLabel" destination="1YM-ou-nEy" id="tgr-jQ-IHs"/>
+                        <outlet property="uploadButton" destination="Joy-6D-fql" id="CSi-ay-r9P"/>
                     </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jNx-On-qI9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NIx-0N-93k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="928.79999999999995" y="37.331334332833585"/>
+            <point key="canvasLocation" x="1868" y="799.2503748125938"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ASf-av-7it">
+            <objects>
+                <tabBarController id="oIh-Rs-px5" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Vd3-rF-NhN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="8he-Mq-IIF" kind="relationship" relationship="viewControllers" id="D5b-rl-LMb"/>
+                        <segue destination="ptK-ac-n8w" kind="relationship" relationship="viewControllers" id="anh-gK-Vbl"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zxZ-U8-hn9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="935" y="38"/>
         </scene>
     </scenes>
 </document>

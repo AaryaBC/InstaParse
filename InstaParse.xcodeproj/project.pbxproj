@@ -18,6 +18,7 @@
 		CAA73DDB1E7E370A00551D6C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA73DDA1E7E370A00551D6C /* HomeViewController.swift */; };
 		CAA73DDD1E7E383D00551D6C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA73DDC1E7E383D00551D6C /* Post.swift */; };
 		CAA73DDF1E7E3A7C00551D6C /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA73DDE1E7E3A7C00551D6C /* PostCollectionViewCell.swift */; };
+		CAA73DE31E7E497A00551D6C /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA73DE21E7E497A00551D6C /* UploadViewController.swift */; };
 		CAC34C221E660841006493D4 /* ParseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC34C211E660841006493D4 /* ParseClient.swift */; };
 		CAC34C251E66088D006493D4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC34C241E66088D006493D4 /* User.swift */; };
 /* End PBXBuildFile section */
@@ -38,6 +39,7 @@
 		CAA73DDA1E7E370A00551D6C /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CAA73DDC1E7E383D00551D6C /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		CAA73DDE1E7E3A7C00551D6C /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
+		CAA73DE21E7E497A00551D6C /* UploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		CAC34C211E660841006493D4 /* ParseClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseClient.swift; sourceTree = "<group>"; };
 		CAC34C241E66088D006493D4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,6 +113,7 @@
 				CA07AEA81E65E5C400051217 /* LoginViewController.swift */,
 				CAA73DD81E7E355E00551D6C /* InstaCell.swift */,
 				CAA73DDA1E7E370A00551D6C /* HomeViewController.swift */,
+				CAA73DE21E7E497A00551D6C /* UploadViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAA73DD91E7E355E00551D6C /* InstaCell.swift in Sources */,
+				CAA73DE31E7E497A00551D6C /* UploadViewController.swift in Sources */,
 				CA07AEA91E65E5C400051217 /* LoginViewController.swift in Sources */,
 				CAA73DDB1E7E370A00551D6C /* HomeViewController.swift in Sources */,
 				CA07AE981E65DCBB00051217 /* ViewController.swift in Sources */,

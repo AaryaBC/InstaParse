@@ -25,6 +25,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 configuration.server = "https://instacodepathparse.herokuapp.com/parse"
             })
         )
+        
+        if PFUser.current() != nil{
+            print("There is a current user")
+            let storyBoard = UIStoryboard(name : "Main", bundle: nil)
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "HomeNavigationController")
+            window?.rootViewController = viewController //root view controller
+            
+        }
+        else{
+            print("No Current user")
+        }
+        
+        //UserDidLogOut
+        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "UserDidLogOut" ), object: nil, queue: OperationQueue.main) {(NSNotification)->Void in //the logout button information is received here
+            
+            print("Inside the change app delegate")
+            let storyBoard = UIStoryboard(name : "Main", bundle: nil)
+            let viewController = storyBoard.instantiateInitialViewController()
+            self.window?.rootViewController = viewController
+            
+        }
         return true
     }
 

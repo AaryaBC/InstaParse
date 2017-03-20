@@ -26,6 +26,7 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 
 - [x] Displays the users username initial for profile photo with each post
+- [x] Alerts the user regarding invalid username/password or username that has already been taken
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 

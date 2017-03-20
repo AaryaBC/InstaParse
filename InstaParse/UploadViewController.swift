@@ -21,7 +21,8 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let image = UIImage(named: "share")
+        navigationItem.titleView = UIImageView(image: image)
         // Do any additional setup after loading the view.
     }
 

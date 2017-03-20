@@ -18,7 +18,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         tableView.reloadData()
+        let image = UIImage(named: "share")
+        navigationItem.titleView = UIImageView(image: image)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,20 +53,18 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.postImageView.file = post.media
         cell.postImageView.loadInBackground()
         cell.usernameLabel.text = post.username
-            
-        if let creationTime = post.creationTime {
-            let postDateFormatter: DateFormatter = {
-                let f = DateFormatter()
-                f.dateFormat = "MM/dd/yyyy @ hh:mm:ss"
-                return f
-            }()
-            cell.creationTimeLabel.text = postDateFormatter.string(from: Date(timeIntervalSinceReferenceDate: creationTime))
-        }
+        let firstChar = post.username?[(post.username?.startIndex)!]
+        cell.buttonPic.setTitle("\(firstChar!)", for: .normal)
+        cell.buttonPic.layer.cornerRadius = 0.5 * cell.buttonPic.bounds.size.width
+        cell.buttonPic.layer.borderWidth = 2.0
+        cell.buttonPic.frame.size = CGSize(width: 25, height: 25)
+        cell.buttonPic.clipsToBounds = true
+        cell.creationTimeLabel.text = post.dateStr
         cell.captionLABEL.text = post.caption
+        cell.commentLabel.text = post.username
         return cell
     }
     
-
     @IBAction func onLogoutPressed(_ sender: Any) {
         PFUser.logOut()
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "UserDidLogOut"), object: nil)

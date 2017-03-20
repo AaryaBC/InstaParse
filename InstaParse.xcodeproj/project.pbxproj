@@ -19,6 +19,9 @@
 		CA3C5BC41E7F0A9000EE8CA8 /* home.imageset in Resources */ = {isa = PBXBuildFile; fileRef = CA3C5BC11E7F0A9000EE8CA8 /* home.imageset */; };
 		CA3C5BC51E7F0A9000EE8CA8 /* profile.imageset in Resources */ = {isa = PBXBuildFile; fileRef = CA3C5BC21E7F0A9000EE8CA8 /* profile.imageset */; };
 		CA3C5BC61E7F0A9000EE8CA8 /* share.imageset in Resources */ = {isa = PBXBuildFile; fileRef = CA3C5BC31E7F0A9000EE8CA8 /* share.imageset */; };
+		CA3C5BC81E7F116900EE8CA8 /* login.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CA3C5BC71E7F116900EE8CA8 /* login.jpg */; };
+		CA3C5BCA1E7F9E7B00EE8CA8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3C5BC91E7F9E7B00EE8CA8 /* ProfileViewController.swift */; };
+		CA3C5BCC1E7FB8C700EE8CA8 /* dummyhome.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CA3C5BCB1E7FB8C700EE8CA8 /* dummyhome.jpg */; };
 		CAA73DD91E7E355E00551D6C /* InstaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA73DD81E7E355E00551D6C /* InstaCell.swift */; };
 		CAA73DDB1E7E370A00551D6C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA73DDA1E7E370A00551D6C /* HomeViewController.swift */; };
 		CAA73DDD1E7E383D00551D6C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA73DDC1E7E383D00551D6C /* Post.swift */; };
@@ -43,6 +46,9 @@
 		CA3C5BC11E7F0A9000EE8CA8 /* home.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = home.imageset; sourceTree = "<group>"; };
 		CA3C5BC21E7F0A9000EE8CA8 /* profile.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = profile.imageset; sourceTree = "<group>"; };
 		CA3C5BC31E7F0A9000EE8CA8 /* share.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = share.imageset; sourceTree = "<group>"; };
+		CA3C5BC71E7F116900EE8CA8 /* login.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = login.jpg; sourceTree = "<group>"; };
+		CA3C5BC91E7F9E7B00EE8CA8 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		CA3C5BCB1E7FB8C700EE8CA8 /* dummyhome.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dummyhome.jpg; sourceTree = "<group>"; };
 		CA73D0B04D3CD99952AECFCB /* Pods-InstaParse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaParse.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InstaParse/Pods-InstaParse.debug.xcconfig"; sourceTree = "<group>"; };
 		CAA73DD81E7E355E00551D6C /* InstaCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstaCell.swift; sourceTree = "<group>"; };
 		CAA73DDA1E7E370A00551D6C /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +112,7 @@
 				CAC34C201E660831006493D4 /* API */,
 				CA07AEA71E65E5A700051217 /* View Controllers */,
 				CA07AE951E65DCBB00051217 /* AppDelegate.swift */,
+				CA3C5BCB1E7FB8C700EE8CA8 /* dummyhome.jpg */,
 				CA07AE971E65DCBB00051217 /* ViewController.swift */,
 				CA07AE991E65DCBB00051217 /* Main.storyboard */,
 				CA3C5BC11E7F0A9000EE8CA8 /* home.imageset */,
@@ -126,6 +133,8 @@
 				CAA73DDA1E7E370A00551D6C /* HomeViewController.swift */,
 				CAA73DE21E7E497A00551D6C /* UploadViewController.swift */,
 				CA3C5BBF1E7F092200EE8CA8 /* unlock.png */,
+				CA3C5BC71E7F116900EE8CA8 /* login.jpg */,
+				CA3C5BC91E7F9E7B00EE8CA8 /* ProfileViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -215,6 +224,8 @@
 				CA3C5BC51E7F0A9000EE8CA8 /* profile.imageset in Resources */,
 				CA3C5BC01E7F092200EE8CA8 /* unlock.png in Resources */,
 				CA3C5BC61E7F0A9000EE8CA8 /* share.imageset in Resources */,
+				CA3C5BCC1E7FB8C700EE8CA8 /* dummyhome.jpg in Resources */,
+				CA3C5BC81E7F116900EE8CA8 /* login.jpg in Resources */,
 				CA07AE9D1E65DCBB00051217 /* Assets.xcassets in Resources */,
 				CA07AE9B1E65DCBB00051217 /* Main.storyboard in Resources */,
 			);
@@ -281,6 +292,7 @@
 				CAA73DDB1E7E370A00551D6C /* HomeViewController.swift in Sources */,
 				CA07AE981E65DCBB00051217 /* ViewController.swift in Sources */,
 				CAC34C221E660841006493D4 /* ParseClient.swift in Sources */,
+				CA3C5BCA1E7F9E7B00EE8CA8 /* ProfileViewController.swift in Sources */,
 				CAA73DDD1E7E383D00551D6C /* Post.swift in Sources */,
 				CA3C5BBE1E7F00F600EE8CA8 /* PostTableViewCell.swift in Sources */,
 				CAC34C251E66088D006493D4 /* User.swift in Sources */,

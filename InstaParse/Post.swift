@@ -10,22 +10,54 @@ import UIKit
 import Parse
 
 class Post: NSObject {
-    let creationTime: TimeInterval?
+    var dateStr: String?
     let media: PFFile?
     let username: String?
     let caption: String?
-    let likesCount: Int?
-    let commentsCount: Int?
     
     init(pfObject: PFObject) {
         print(pfObject)
         
-        creationTime = pfObject["creationTime"] as? TimeInterval
+        if let postDate = pfObject.createdAt{
+            let calendar = NSCalendar.current
+            let components = calendar.dateComponents([.day,.hour,.minute,.second], from: postDate, to: Date())
+            let day = components.day!
+            let hour = components.hour!
+            let minute = components.minute!
+            let second = components.second!
+            
+            if day > 0{
+                if day > 1{
+                    dateStr = "\(day) days ago"
+                }
+                else{
+                    dateStr = "1 day ago"
+                }
+            }
+            else if hour > 0{
+                if hour > 1{
+                    dateStr = "\(hour) hours ago"
+                }
+                else{
+                    dateStr = "1 hours ago"
+                }
+            }
+            else if minute > 0{
+                if minute > 1{
+                    dateStr = "\(minute) minutes ago"
+                }
+                else{
+                    dateStr = "1 minutes ago"
+                }
+            }
+            else{
+                dateStr = "\(second) seconds ago"
+            }
+        }
+        
         media = pfObject["media"] as? PFFile
         username = pfObject["username"] as? String
         caption = pfObject["caption"] as? String
-        likesCount = pfObject["likesCount"] as? Int
-        commentsCount = pfObject["commentsCount"] as? Int
     }
     
     class func postUserImage(image: UIImage?, withCaption caption: String?, withCompletion completion: PFBooleanResultBlock?) {
@@ -34,8 +66,6 @@ class Post: NSObject {
         post["media"] = getPFFileFromImage(image: image)
         post["username"] = PFUser.current()?.username
         post["caption"] = caption
-        post["likesCount"] = 0
-        post["commentsCount"] = 0
         post.saveInBackground(block: completion)
     }
     

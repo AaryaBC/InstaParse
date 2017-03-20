@@ -17,6 +17,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "login.jpg")!)
 
         // Do any additional setup after loading the view.
     }
@@ -34,6 +35,20 @@ class LoginViewController: UIViewController {
                 print("You're logged in")
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
             }
+            else{
+                let alertController = UIAlertController(title: "ERROR", message: "Invalid Username/Password", preferredStyle: .alert)
+                
+                
+                let cancelAction = UIAlertAction(title: "OK", style: .cancel) { (action) in
+                    // handle cancel response here. Doing nothing will dismiss the view.
+                }
+                // add the cancel action to the alertController
+                alertController.addAction(cancelAction)
+                
+                
+                self.present(alertController, animated: true) {
+                }
+            }
         }
     }
     
@@ -46,11 +61,25 @@ class LoginViewController: UIViewController {
                 print("Created a user")
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
             } else {
+                let alertController = UIAlertController(title: "ERROR", message: "Username Already Taken", preferredStyle: .alert)
+                
+                
+                let cancelAction = UIAlertAction(title: "OK", style: .cancel) { (action) in
+                    // handle cancel response here. Doing nothing will dismiss the view.
+                }
+                // add the cancel action to the alertController
+                alertController.addAction(cancelAction)
+                
+                
+                self.present(alertController, animated: true) {
+                    // optional code for what happens after the alert controller has finished presenting
                 print("Error: \(error?.localizedDescription)")
+                }
             }
         }
     }
 
+    
     /*
     // MARK: - Navigation
 

@@ -39,7 +39,7 @@ class Post: NSObject {
                     dateStr = "\(hour) hours ago"
                 }
                 else{
-                    dateStr = "1 hours ago"
+                    dateStr = "1 hour ago"
                 }
             }
             else if minute > 0{
@@ -47,7 +47,7 @@ class Post: NSObject {
                     dateStr = "\(minute) minutes ago"
                 }
                 else{
-                    dateStr = "1 minutes ago"
+                    dateStr = "1 minute ago"
                 }
             }
             else{
